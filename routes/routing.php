@@ -1,6 +1,7 @@
 <?php
 //Carga controladors
 require("controllers/users.php");
+require("controllers/photos.php");
 //Fin carga controladors
 class Routing {
     //Crearem un array amb les rutes
@@ -10,6 +11,7 @@ class Routing {
         "/user" => ["Users","user.php",true,"POST"],
         "/userupd" => ["Users","userupd.php",true,"PUT"],
         "/userdel" => ["Users","userdel.php",true,"DELETE"],
+        "/photos" => ["Photos","photos.php",true,"GET"],
     ];
 
     public function __construct(){
