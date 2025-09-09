@@ -1,4 +1,7 @@
 <?php
+//Carga controladors
+require("controllers/users.php");
+//Fin carga controladors
 class Routing {
     //Crearem un array amb les rutes
     private $routes = [
