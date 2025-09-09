@@ -9,6 +9,7 @@ class Routing {
         "/users" => ["Users","users.php",true,"GET"],
         "/user" => ["Users","user.php",true,"POST"],
         "/userupd" => ["Users","userupd.php",true,"PUT"],
+        "/userdel" => ["Users","userdel.php",true,"DELETE"],
     ];
 
     public function __construct(){
