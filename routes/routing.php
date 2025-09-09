@@ -32,4 +32,29 @@ class Routing {
             include 'public/404.php';
         }
 	}
+
+    public static function params() {
+        $req = $_SERVER["REQUEST_URI"];
+        $paramsResponse = [];
+        //Localitzem el directori de muntatge per obtenir la ruta
+        $reqSplit = explode('/phpapi', $req);
+        //Treballem només amb la ruta
+        $req = (isset($reqSplit[1])) ? $reqSplit[1] : "/";
+        //Si la ruta no comenca amb / la afegim
+        if(!str_starts_with($req, '/')){
+            $req = '/' . $req;
+        }
+        //Recuperem els parametres
+        $part = explode("?", $req);
+        if(isset($part[1])){
+			$params = explode('&',$part[1]);
+            //Els situem en l'array que retornem
+			foreach($params as $param){
+				$keyValue = explode('=', $param);
+				$paramsResponse[$keyValue[0]] = $keyValue[1];
+			}
+		}
+        var_dump($paramsResponse);
+		return $paramsResponse;
+    }
 }

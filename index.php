@@ -3,5 +3,5 @@
     require 'routes/routing.php';
 
     //Test del routing
-    new Routing();
+    Routing::params();
 ?>
