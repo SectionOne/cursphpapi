@@ -1,4 +1,6 @@
 <?php
-$nom = "Sergi";
-echo "Hola món, el meu nom és " . $nom;
+$es = "Hola";
+$en = "Hello";
+$idioma = "es";
+echo "Hola món. " . $$idioma;
 ?>
