@@ -31,7 +31,7 @@ class Routing {
         if(isset($this->routes[$req])) {
             //Filtrem si la ruta no te mètode definit o si en te, el mètode coincideix
             if(!isset($this->routes[$req][3]) || $this->routes[$req][3] == $metode) {
-                include 'public/' . $this->routes[$req][1];
+                //include 'public/' . $this->routes[$req][1];
             }
         } else {
             include 'public/404.php';
@@ -59,6 +59,10 @@ class Routing {
 				$paramsResponse[$keyValue[0]] = $keyValue[1];
 			}
 		}
+
+        //Recuperem els paràmetres Post i els situem en l'array
+        $paramsResponse = array_merge($paramsResponse, $_POST);
+        var_dump($paramsResponse);
 		return $paramsResponse;
     }
 }
