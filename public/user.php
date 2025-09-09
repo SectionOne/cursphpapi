@@ -10,8 +10,13 @@
 
     if(isset($nom) && isset($email) && isset($clau)){
         //Procedim a crear l'usuari
-        $code = 200;
-        $value = "Usuari creat correctament.";
+        if(USERS::createUser($nom,$email,$clau)){
+            $code = 200;
+            $value = "Usuari creat correctament.";
+        } else {
+            $code = 500;
+            $value = "Error: No s'ha pogut crear l'usuari.";
+        }
     } else {
         //Codi per error de falta de dades
         $code = 400;
