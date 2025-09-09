@@ -12,5 +12,11 @@ class users{
         $queryUserData = $db->query("select * from users " . $filterId);
         return $queryUserData;
     }
+    public static function createUser($nom,$email,$clau){
+		$db=Conectar::conexion();
+        $queryInsertUser = "INSERT INTO users (nom,email,clau,status) VALUES ('" . $nom . "','" . $email . "','" . $clau . "',0)";
+		$newUser=$db->query($queryInsertUser);
+        return $newUser;
+	}
 }
 ?>
