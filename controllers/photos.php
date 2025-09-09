@@ -18,9 +18,10 @@ class photos{
         $db=Conectar::conexion();
         if($idPhoto != -1) {
             $queryUserData = $db->query("select file from photos where id = '" . $idPhoto . "' limit 1");
-            $row = $data->fetch_assoc();
-            if (file_exists($row['file'])) {
-                return "assets/img/" . $row['file'];
+            $row = $queryUserData->fetch_assoc();
+            $path = "assets/img/" . $row['file'];
+            if (file_exists($path)) {
+                return $path;
             } else {
                 return false;
             }
