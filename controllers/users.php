@@ -1,5 +1,5 @@
 <?php
-require_once("./db/connect.php");
+require_once("./db/connectDb.php");
 
 class users{
     //Constructor per connectar a la base de dades
