@@ -6,5 +6,10 @@ class users{
     public function __construct(){
 
 	}
+    public static function readUser(){
+        $db=Conectar::conexion();
+        $queryUserData = $db->query("select * from users ");
+        return $queryUserData;
+    }
 }
 ?>
