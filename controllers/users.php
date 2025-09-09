@@ -24,5 +24,10 @@ class users{
 		$updateUser=$db->query($queryUpdateUser);
         return $updateUser;
 	}
+    public static function deleteUser($idUser){
+		$db=Conectar::conexion();
+		$queryDelete = $db->query("delete from users where id = '" . $idUser . "' limit 1");
+        return $queryDelete;
+	}
 }
 ?>
