@@ -1,4 +1,4 @@
 <?php
 $nom = "Sergi";
-echo "Hola món";
+echo "Hola món, el meu nom és " . $nom;
 ?>
