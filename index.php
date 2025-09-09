@@ -1,6 +1,7 @@
 <?php
     require 'db/connectDb.php';
+    require 'routes/routing.php';
 
-    //Test de connexió a la BBDD
-    var_dump(Conectar::conexion());
+    //Test del routing
+    new Routing();
 ?>
