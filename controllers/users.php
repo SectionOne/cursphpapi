@@ -18,5 +18,11 @@ class users{
 		$newUser=$db->query($queryInsertUser);
         return $newUser;
 	}
+    public static function updateUser($idUser,$nom,$email,$clau){
+		$db=Conectar::conexion();
+		$queryUpdateUser = "UPDATE users SET nom='" . $nom . "',email='" . $email . "',clau='" . $clau . "' WHERE id = '" . $idUser . "' limit 1";
+		$updateUser=$db->query($queryUpdateUser);
+        return $updateUser;
+	}
 }
 ?>
