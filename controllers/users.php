@@ -6,9 +6,10 @@ class users{
     public function __construct(){
 
 	}
-    public static function readUser(){
+    public static function readUser($idUser = -1){
         $db=Conectar::conexion();
-        $queryUserData = $db->query("select * from users ");
+        $filterId = ($idUser == -1) ? "" : "where id = '" . $idUser . "' limit 1";
+        $queryUserData = $db->query("select * from users " . $filterId);
         return $queryUserData;
     }
 }

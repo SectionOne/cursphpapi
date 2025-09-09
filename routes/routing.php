@@ -21,7 +21,11 @@ class Routing {
         if(!str_starts_with($req, '/')){
 			$req = '/' . $req;
 		}
-
+        
+        //Filtrem que no tingui en compte els parametres
+        $part = explode('?', $req);
+		$req = $part[0];
+        
         //Carreguem vista
         if(isset($this->routes[$req])) {
             //Filtrem si la ruta no te mètode definit o si en te, el mètode coincideix
@@ -54,7 +58,6 @@ class Routing {
 				$paramsResponse[$keyValue[0]] = $keyValue[1];
 			}
 		}
-        var_dump($paramsResponse);
 		return $paramsResponse;
     }
 }
