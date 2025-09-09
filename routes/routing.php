@@ -32,7 +32,7 @@ class Routing {
         if(isset($this->routes[$req])) {
             //Filtrem si la ruta no te mètode definit o si en te, el mètode coincideix
             if(!isset($this->routes[$req][3]) || $this->routes[$req][3] == $metode) {
-                //include 'public/' . $this->routes[$req][1];
+                include 'public/' . $this->routes[$req][1];
             }
         } else {
             include 'public/404.php';
@@ -71,7 +71,6 @@ class Routing {
             parse_str($input, $params);
             $paramsResponse = array_merge($paramsResponse, $params);
         }
-        var_dump($paramsResponse);
 		return $paramsResponse;
     }
 }
