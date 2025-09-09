@@ -15,7 +15,7 @@ class Routing {
 			$req = '/' . $req;
 		}
 
-        //Evaluem la ruta obtinguda
-        var_dump($req);
+        //Carreguem vista
+        include 'public/' . $this->routes[$req][1];
 	}
 }
