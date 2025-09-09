@@ -7,6 +7,7 @@ class Routing {
     private $routes = [
         "/" => ["Inici","main.php",false],
         "/users" => ["Users","users.php",true,"GET"],
+        "/user" => ["Users","newuser.php",true,"POST"],
     ];
 
     public function __construct(){
