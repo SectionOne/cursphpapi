@@ -16,6 +16,10 @@ class Routing {
 		}
 
         //Carreguem vista
-        include 'public/' . $this->routes[$req][1];
+        if(isset($this->routes[$req])) {
+            include 'public/' . $this->routes[$req][1];
+        } else {
+            include 'public/404.php';
+        }
 	}
 }
